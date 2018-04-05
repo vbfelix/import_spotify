@@ -1,4 +1,4 @@
-# Pacotes ------------------------------------------------------------------
+# Packages ------------------------------------------------------------------
 # install.packages("devtools")
 #devtools::install_github("56north/spotifycharts")
 
@@ -8,13 +8,13 @@ library(dplyr)
 library(purrr)
 
 
-# Função de importação ------------------------------------------------------------------
+# Function ------------------------------------------------------------------
 
 import_spotify<-function(month,year,region= "br"){
   if(is.numeric(month) == F) {
-    stop ("O mês deve ser informado pelo seu numeral")}
+    stop ("The month must be informed by its numeral")}
   if(nchar(year) != 4) {
-    stop ("O ano deve ser informado com 4 dígitos")}
+    stop ("The year must be entered with 4 digits")}
   
   chart_daily() %>% 
     filter(month(days) == month & year(days) == year) ->days
